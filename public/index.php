@@ -12,16 +12,16 @@
         if(isset($_GET['name'])){
             $viewName=$_GET['name'];
             if($viewName=="aungaung"){
-                require './views/aungaung';
+                require '../views/aungaung.php';
             }elseif($viewName=="kyawkyaw"){
-                require './views/kyawkyaw.php';
+                require '../views/kyawkyaw.php';
             }else{
-                require './views/home.php';    
+                require '../views/home.php';    
             }
  
             
         }else{
-            require './views/home.php';
+            require '../views/home.php';
 
         }
       
