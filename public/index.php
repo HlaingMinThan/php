@@ -11,20 +11,21 @@
        
         if(isset($_GET['name'])){
             $viewName=$_GET['name'];
-            if($viewName=="aungaung"){
-                require '../views/aungaung.php';
-            }elseif($viewName=="kyawkyaw"){
-                require '../views/kyawkyaw.php';
+            if(file_exists('../views/'.$viewName.'.php')){
+                view($viewName);
             }else{
-                require '../views/home.php';    
+                view("home");
             }
- 
             
         }else{
-            require '../views/home.php';
+            view("home");
 
         }
-      
+        function view($viewName){
+            ob_start();
+            require '../views/'.$viewName.'.php';
+            ob_end_flush();
+        }
     ?>
   
 </body>
